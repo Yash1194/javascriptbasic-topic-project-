@@ -1,12 +1,12 @@
-var a = document.querySelector("#bulb")
 var btn = document.querySelector("button")
-var flag = 0
-btn.addEventListener("click", function(){
-    if(flag ==0){bulb.style.backgroundColor = "yellow"
-    console.log("cliocked")
-flag = 1}else{
-    bulb.style.backgroundColor = "transparent"
-    console.log("cliocked")
-    flag = 0
+var box = document.querySelector("#box")
+btn.addEventListener("click", function() {
+    var c1 = Math.floor(Math.random() * 256)
+    var c2 = Math.floor(Math.random() * 256)
+    var c3 = Math.floor(Math.random() * 256)
+    
+    console.log(c1)
+    box.style.backgroundColor = `rgb(${c1}, ${c2}, ${c3})`
 }
-})
+
+)

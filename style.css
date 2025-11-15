@@ -8,19 +8,31 @@ html, body {
   height: 100%;
   width: 100%;
 }
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
 
-#bulb{
-    height:300px;
-    width: 300px;
-
-  
-    border-radius: 50%;
-    border-color:  black;
-    border: 4px solid;
+}
+#box{
+    height: 400px;
+    width: 400px;
+    background-color: rgb(35, 95, 78);
+    border-radius: 7px;
+    
 
 }
 button{
-    padding: 10px 30px;
-        font-size: 30px;
-        margin: 60px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600;
+    
+}
+button:active{
+    transform: scale(0.90);
+
 }
