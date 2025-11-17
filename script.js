@@ -1,50 +1,30 @@
-var arr = [
-    {
-        team: "CSK",
-        primary: "yellow",
-        secondary: "#0018E9"
 
-    },{
-        team: "RCB",
-        primary: "red",
-        secondary: "black"
-    },{
-        team: "MI",
-        primary: "royalblue",
-        secondary: "#D1AB3E"
-    },{
-        team: "KKR",
-        primary: "#2E0854",
-        secondary: "#B3A123"
-    },{
-        team: "SRH",
-        primary: "#EE7429",
-        secondary: "#221F21"
-    },{
-        team: "DC",
-        primary: "darkblue",
-        secondary: "#D71921"
-    },{
-        team: "PBKS",
-        primary: "#DCDDDF",
-        secondary: "#ED1B24"
-    },{ 
-        team: "RR",
-        primary: "#C3A11F",
-        secondary: "#074EA2"
-    }
-]
-var a = Math.floor(Math.random() * arr.length);
+var btn = document.querySelector('button')
+var main = document.querySelector('main')
 
-console.log(arr[a]);
-var btn = document.querySelector("button")
-var h1 = document.querySelector("h1")
-var body = document.querySelector("body")
+var arr = ['hay! i am yash', 'i love coding', 'javascript is fun', 'let us learn together', 'coding is life','sheriyians are the best','harsh bhaiya is great','mohit bhaiya is handsome']
 
-btn.addEventListener("click", function(){
-    var winner  = arr[Math.floor(Math.random()*arr.length)]
-    h1.innerText = winner.team;
-    h1.style.backgroundColor = winner.primary;
-    body.style.backgroundColor = winner.secondary;
-    
+btn.addEventListener('click', function() {
+ var h1 = document.createElement('h1')
+
+ 
+    var x = Math.random() * 100
+    var y = Math.random() * 100
+    var c1 = Math.floor(Math.random() * 256)
+    var c2 = Math.floor(Math.random() * 256)
+    var c3 = Math.floor(Math.random() * 256)
+    var scl = Math.random() * 3
+    var rotats = Math.random() * 360
+    var a = Math.floor(Math.random() * arr.length)
+    h1.innerText = arr[a]
+    h1.style.position = 'absolute'
+    h1.style.transform = 'scale(' + scl + ')'
+    h1.style.left = x + '%'
+    h1.style.top = y + '%'
+  
+    h1.style.rotate = rotats + 'deg'
+
+    console.log((h1));
+
+    main.appendChild(h1)
 })
