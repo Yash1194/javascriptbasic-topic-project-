@@ -1,30 +1,23 @@
-
+var grow = 0
 var btn = document.querySelector('button')
-var main = document.querySelector('main')
-
-var arr = ['hay! i am yash', 'i love coding', 'javascript is fun', 'let us learn together', 'coding is life','sheriyians are the best','harsh bhaiya is great','mohit bhaiya is handsome']
+var inner = document.querySelector('.inner')
+var h2 = document.querySelector('h2')
 
 btn.addEventListener('click', function() {
- var h1 = document.createElement('h1')
+    btn.style.pointerEvents = 'none'
 
- 
-    var x = Math.random() * 100
-    var y = Math.random() * 100
-    var c1 = Math.floor(Math.random() * 256)
-    var c2 = Math.floor(Math.random() * 256)
-    var c3 = Math.floor(Math.random() * 256)
-    var scl = Math.random() * 3
-    var rotats = Math.random() * 360
-    var a = Math.floor(Math.random() * arr.length)
-    h1.innerText = arr[a]
-    h1.style.position = 'absolute'
-    h1.style.transform = 'scale(' + scl + ')'
-    h1.style.left = x + '%'
-    h1.style.top = y + '%'
-  
-    h1.style.rotate = rotats + 'deg'
+    var num = Math.floor(Math.random() * 100)
 
-    console.log((h1));
+    var int = setInterval(function() {
+        grow++ 
+        h2.innerHTML = grow + '%'
+        inner.style.width = grow + '%'
+    },num)
+    setTimeout(function() {
+        clearInterval(int)
+        h2.innerHTML= 'Downloded'
+        btn.style.opacity = '0.5'
+        console.log('your song downloded in ', num/10, 'seconds')
+    },num*100)
 
-    main.appendChild(h1)
 })
