@@ -1,23 +1,26 @@
-var grow = 0
-var btn = document.querySelector('button')
-var inner = document.querySelector('.inner')
-var h2 = document.querySelector('h2')
+var img = document.querySelector('img');
+var love = document.querySelector('#love');
 
-btn.addEventListener('click', function() {
-    btn.style.pointerEvents = 'none'
+img.addEventListener('click', function(){
+    love.style.opacity = 1;
+    love.style.transform = 'translate(-50%,-50%) scale(1) rotate(0deg)'
 
-    var num = Math.floor(Math.random() * 100)
-
-    var int = setInterval(function() {
-        grow++ 
-        h2.innerHTML = grow + '%'
-        inner.style.width = grow + '%'
-    },num)
     setTimeout(function() {
-        clearInterval(int)
-        h2.innerHTML= 'Downloded'
-        btn.style.opacity = '0.5'
-        console.log('your song downloded in ', num/10, 'seconds')
-    },num*100)
+        love.style.transform = 'translate(-50%,-300%) scale(1) rotate(60deg)'
+
+    },800)
+
+     setTimeout(function() {
+        love.style.opacity = 0;
+
+    },1000)
+     setTimeout(function() {
+        love.style.transform = 'translate(-50%,-50%) scale(0) rotate(60deg)'
+
+    },1200)
+   
+   
+
+
 
 })

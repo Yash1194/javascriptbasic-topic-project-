@@ -2,77 +2,62 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'helvetica neue';
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
-body{
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  background-color: white;
+  width: 200px;
+  border-radius: 10px;
+  padding: 20px;
+  position: absolute;
+}
+.card div{
+  position: relative;
   overflow: hidden;
 }
-main{
-  height: 100%;
+.card img{
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: black;
-
-}
-.card p{
-  font-size: 500;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-bottom: 20px;
-
-}
-.card p span{
-  font-weight: 600;
-  color: royalblue;
-}
-.card{
-  width: 450px;
-  background-color: white;
-  padding: 30px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 10px;
   border-radius: 10px;
+}
+.card h2{
+  font-size: 20px;
+  text-align: center;
+}
+
+.card i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  opacity: 0;
   
-}
-.outer{
-  height: 20px;
-  width: 100%;
-  background: rgb(184, 182, 182);
-  border-radius: 50px;
- 
-}
-.inner{
-  height: 100%;
-  width: 0%;
-  background: green;
-  border-radius: 50px;
+  
+  background-image: url(https://t3.ftcdn.net/jpg/01/14/77/58/360_F_114775804_4yfG9qbKp1NlF1RLo4MUlGIVj9MWhnnc.jpg);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 
+  transform: translate(-50%,-50%) scale(0) rotate(-60deg);
+  transition: all cubic-bezier(.65,1,.77,1.44) 0.4s;
 }
 
-.bottom{
-  align-items: center;
-  margin-top: 20px;  
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: space-between;
-
-}
-.bottom h2{
-  font-weight: 600;
-  font-size: 24px;
-  font-family: monospace;
-}
-.bottom button{
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: green;
-  color: white;
-  cursor: pointer;
-}
-.bottom button:active{
- scale: 0.95;
-}
