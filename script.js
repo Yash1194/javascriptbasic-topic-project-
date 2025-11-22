@@ -1,26 +1,34 @@
-var img = document.querySelector('img');
-var love = document.querySelector('#love');
-
-img.addEventListener('click', function(){
-    love.style.opacity = 1;
-    love.style.transform = 'translate(-50%,-50%) scale(1) rotate(0deg)'
-
-    setTimeout(function() {
-        love.style.transform = 'translate(-50%,-300%) scale(1) rotate(60deg)'
-
-    },800)
-
-     setTimeout(function() {
-        love.style.opacity = 0;
-
-    },1000)
-     setTimeout(function() {
-        love.style.transform = 'translate(-50%,-50%) scale(0) rotate(60deg)'
-
-    },1200)
-   
-   
 
 
 
-})
+
+function handleKey(letter) {
+  letter = letter.toUpperCase();
+
+  // 1️⃣ Play Sound
+  let audio = new Audio(`./${letter}.mp3`);
+  audio.play().catch(() => {});
+
+  // 2️⃣ Highlight Matching Virtual Key
+  let keyEl = document.querySelector(`.key[data-sound="${letter}"]`);
+  if (!keyEl) return;
+
+  keyEl.classList.add("active");
+
+  // 3️⃣ Animation Remove
+  setTimeout(() => {
+    keyEl.classList.remove("active");
+  }, 150);
+}
+
+// 4️⃣ Keyboard Press Event (Global)
+document.addEventListener("keydown", (e) => {
+  handleKey(e.key);
+});
+
+// 5️⃣ Mouse Click Event on Virtual Keys
+document.querySelectorAll(".key").forEach(key => {
+  key.addEventListener("click", () => {
+    handleKey(key.getAttribute("data-sound"));
+  });
+});
